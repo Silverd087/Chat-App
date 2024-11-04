@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="607.0" maxWidth="1230.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="548.0" prefWidth="1230.0" style="-fx-background-color: #FFFFFF;" styleClass="root" stylesheets="@../Ressources/CSS/Chat.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tutoringApp.Controllers.ProfileController">
+   <children>
+      <!-- Sidebar -->
+      <VBox layoutX="-14.0" prefHeight="548.0" prefWidth="299.0" spacing="10.0" style="-fx-background-color: #1976D2; -fx-background-radius: 15;" styleClass="sidebar" stylesheets="@../Ressources/CSS/Profile.css">
+        <children>
+            <VBox alignment="CENTER" prefHeight="182.0" prefWidth="100.0">
+               <children>
+                  <Button mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Ressources/images/sdf.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></VBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#switchToDashboardScene" styleClass="nav-buttons" stylesheets="@Dashboard.css" text="Home">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" styleClass="nav-buttons" stylesheets="@../Ressources/CSS/Profile.css">
+               <children>
+                  <Button fx:id="calendarButton" mnemonicParsing="false" onAction="#switchToCalendarScene" styleClass="nav-buttons" stylesheets="@../Ressources/CSS/Profile.css">
+                     <graphic>
+                        <Label prefHeight="34.0" prefWidth="91.0" text="Calendar" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#switchToChatScene" styleClass="nav-buttons" stylesheets="@../Ressources/CSS/Profile.css" text="Chat">
+                     <font>
+                        <Font name="Calibri Bold" size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" styleClass="nav-buttons" stylesheets="@../Ressources/CSS/Profile.css">
+                     <graphic>
+                        <Label prefHeight="34.0" prefWidth="82.0" text="Settings" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="259.0" prefWidth="299.0" style="-fx-background-color: #1976D2; -fx-background-radius: 15;">
+               <children>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="195.0" text="Apply now" textFill="#f39313">
+                     <font>
+                        <Font name="Calibri Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <children>
+                        <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogoutButtonAction" text="Log Out" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            </children>
+      </VBox>
+      <!-- Main Content -->
+      <VBox alignment="CENTER" layoutX="299.0" layoutY="112.0" prefHeight="486.0" prefWidth="759.0" spacing="10.0" style="-fx-padding: 100; -fx-background-color: #FFFFFF;" stylesheets="@../Ressources/CSS/Profile.css" AnchorPane.rightAnchor="171.79999999999995">
+         <padding>
+            <Insets bottom="50" left="50" right="50" top="50" />
+         </padding>
+         <children>
+            <HBox prefHeight="74.0" prefWidth="500.0" spacing="10" style="-fx-background-color: #EBFBFE;" styleClass="main-content" stylesheets="@../Ressources/CSS/Profile.css">
+               <Label alignment="CENTER" prefHeight="46.0" prefWidth="81.0" style="-fx-background-color: #EBFBFE; -fx-background-radius: 100; -fx-translate-x: 15; -fx-translate-y: 10;" styleClass="label" text="Name:" textAlignment="RIGHT">
+                  <font>
+                     <Font name="Arial Black" size="12.0" />
+                  </font>
+               </Label>
+               <Label fx:id="nameLabel" alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EBFBFE; -fx-translate-y: 25;" />
+            </HBox>
+            <HBox prefHeight="74.0" prefWidth="500.0" spacing="10" style="-fx-background-color: #EBFBFE;" styleClass="main-content" stylesheets="@../Ressources/CSS/Profile.css">
+               <Label alignment="CENTER" prefHeight="34.0" prefWidth="100.0" style="-fx-background-color: #EBFBFE; -fx-translate-y: 10; -fx-translate-x: 15;" styleClass="label" text="Last Name:" textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial Black" size="12.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lastNameLabel" alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EBFBFE; -fx-translate-y: 20;" />
+            </HBox>
+            <HBox prefHeight="74.0" prefWidth="500.0" spacing="10" style="-fx-background-color: #EBFBFE;" styleClass="main-content" stylesheets="@../Ressources/CSS/Profile.css">
+               <Label alignment="CENTER" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #EBFBFE; -fx-translate-x: 15; -fx-translate-y: 10;" styleClass="label" text="Email:" textAlignment="RIGHT">
+                  <font>
+                     <Font name="Arial Black" size="12.0" />
+                  </font>
+               </Label>
+               <Label fx:id="emailLabel" alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EBFBFE; -fx-translate-y: 19;" stylesheets="@Dashboard.css" />
+            </HBox>
+            <HBox prefHeight="74.0" prefWidth="500.0" spacing="10" style="-fx-background-color: #EBFBFE;" styleClass="main-content" stylesheets="@../Ressources/CSS/Profile.css">
+               <Label alignment="CENTER" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #EBFBFE; -fx-translate-x: 15; -fx-translate-y: 10;" styleClass="label" text="Courses:" textAlignment="RIGHT">
+                  <font>
+                     <Font name="Arial Black" size="12.0" />
+                  </font>
+               </Label>
+               <Label fx:id="courseCodesLabel" alignment="CENTER" prefWidth="200.0" style="-fx-background-color: #EBFBFE; -fx-translate-y: 18;" />
+            </HBox>
+         </children>
+      </VBox>
+      <Label layoutX="345.0" layoutY="36.0" text="Profile">
+         <font>
+            <Font name="Calibri Light" size="40.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
